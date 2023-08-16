@@ -9,11 +9,18 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+    source/chase_strategy.cpp \
+    source/game.cpp \
+    source/gameobject.cpp \
+    source/ghost.cpp \
+    source/main.cpp \
+    source/mainwindow.cpp \
+    source/pacman.cpp
 
 HEADERS += \
-    mainwindow.h
+    source/game.h \
+    source/gameobject.h \
+    source\mainwindow.h
 
 FORMS += \
     mainwindow.ui
@@ -22,3 +29,7 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Resources.qrc
+

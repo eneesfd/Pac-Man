@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLabel>
+#include <QKeyEvent>
+#include <QTimer>
+#include "Game.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +18,16 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void initLabels();
+    void keyPressEvent(QKeyEvent*) override;
 
+private slots:
+    void update_score();
 private:
     Ui::MainWindow *ui;
+    QLabel *score_title, *score;
+    QLabel *win_label, *lose_labe;
+    QTimer *score_timer;
+    Game *game;
 };
 #endif // MAINWINDOW_H
