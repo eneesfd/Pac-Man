@@ -1,7 +1,8 @@
 #include "gameobject.h"
 
-GameObject::GameObject(QObject *parent)
-    : QObject{parent}
+GameObject::GameObject(ObjetType t, QPixmap pixmap)
+    : QGraphicsPixmapItem(pixmap)
+    , type(t)
 {
-
 }
+
